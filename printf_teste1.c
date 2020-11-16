@@ -33,6 +33,7 @@ void	ft_format_read(const char *s, va_list lst)
 	int	value_d;
 	char	value_c;
 	unsigned int	value_u;
+	int	value_x;
 
 	while(s[i] != '\0')
 	{
@@ -59,7 +60,11 @@ void	ft_format_read(const char *s, va_list lst)
 				value_u = va_arg(lst, unsigned int);
 				ft_putstr(ft_itoa_unsigned(value_u));
 			}
-
+			else if (class == 'x')
+			{
+				value_x = va_arg(lst, int);
+				ft_putstr(ft_itoa_base(value_x, 16));
+			}
 			i++;
 		}
 		else
@@ -80,10 +85,11 @@ int printf_ana(const char *format,...)
 }
 
 int main()
-{
-	unsigned int c = 4294967295;
-
-	printf_ana("Meu_Printf=%u\n",c);
-	printf("Printf_Oficial=%u\n", c);
+{	
+	int a = 0xE7;
+	int b = 0xABCDEF;
+	int c = 0xA9B8;
+	printf_ana("Meu_Printf=%x, %x, %x\n",a, b, c);
+	printf("Printf_Oficial=%x, %x, %x\n", a,b, c);
 	return (0);
 }
