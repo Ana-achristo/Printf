@@ -14,7 +14,7 @@ int	ft_size_number_b(unsigned int n, int base)
 	return (size);
 }
 
-char *ft_itoa_base(int n, int base)
+char *ft_itoa_base(int n, int base, char a)
 {
 	int	size;
 	char	*s;
@@ -30,7 +30,7 @@ char *ft_itoa_base(int n, int base)
 		if ((n % base) >= 0 & (n % base) <= 9)	
 			s[size] = n % base + 48;	
 		else
-			s[size] = n % base + 87;
+			s[size] = n % base + a - 10;
 		n = n / base;
 		size--;
 	}
