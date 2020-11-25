@@ -5,7 +5,7 @@ int	ft_size_number_b(unsigned int n, int base)
 	int size;
 
 	size = 0;
-	while (n / base > 0)
+	while ((n / base) > 0)
 	{
 		size = size + 1;
 		n = n / base;
@@ -27,7 +27,7 @@ char *ft_itoa_base(int n, int base, char a)
 	size = size - 1;
 	while (size >= 0)
 	{
-		if ((n % base) >= 0 & (n % base) <= 9)	
+		if (((n % base) >= 0) & ((n % base) <= 9))	
 			s[size] = n % base + 48;	
 		else
 			s[size] = n % base + a - 10;
