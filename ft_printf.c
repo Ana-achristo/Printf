@@ -6,7 +6,7 @@ void	ft_putdata(t_flags param, va_list lst)
 		ft_printf_c(param, lst);
 	if(param.converter == 's')
 		ft_printf_s(param, lst);
-	if(param.converter == 'd')
+	if(param.converter == 'd' || param.converter == 'i')
 		ft_printf_d(param, lst);
 	if(param.converter == 'u')
 		ft_printf_u(param, lst);

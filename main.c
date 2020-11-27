@@ -71,21 +71,21 @@ int main()
 	ft_printf("Teste: *.*s, 10, 3\n");
 	ft_printf("Meu=%*.*s\n", 10, 3, s);
 	printf("Ofi=%*.*s\n\n", 10, 3, s);
-
-	// Teste d
+*/
+	// Teste d e i
 	int d = 543;
 
-	ft_printf("Teste: d\n");
-	ft_printf("Meu=%d\n", d);
-	printf("Ofi=%d\n\n", d);
+	ft_printf("Teste: i\n");
+	ft_printf("Meu=%i\n", d);
+	printf("Ofi=%i\n\n", d);
 
 	ft_printf("Teste: 5d\n");
 	ft_printf("Meu=%5d\n", d);
 	printf("Ofi=%5d\n\n", d);
 
-	ft_printf("Teste: -5d\n");
-	ft_printf("Meu=%-5d\n", d);
-	printf("Ofi=%-5d\n\n", d);
+	ft_printf("Teste: -5i\n");
+	ft_printf("Meu=%-5i\n", d);
+	printf("Ofi=%-5i\n\n", d);
 
 	ft_printf("Teste: 05d\n");
 	ft_printf("Meu=%05d\n", d);
@@ -95,9 +95,9 @@ int main()
 	ft_printf("Meu=%-05d\n", d);
 	printf("Ofi=%-05d\n\n", d);
 	
-	ft_printf("Teste: *d,5\n");
-	ft_printf("Meu=%*d\n",5, d);
-	printf("Ofi=%*d\n\n", 5,d);
+	ft_printf("Teste: *i,5\n");
+	ft_printf("Meu=%*i\n",5, d);
+	printf("Ofi=%*i\n\n", 5,d);
 
 	ft_printf("Teste: d, d\n");
 	ft_printf("Meu=%d, %d\n", d, d);
@@ -111,7 +111,7 @@ int main()
 	ft_printf("Meu=%*.*d\n",5, 2, d);
 	printf("Ofi=%*.*d\n\n", 5, 2,d);
 
-	// Teste u
+/*	// Teste u
 	unsigned int u = 123;
 
 	ft_printf("Teste: u\n");
@@ -188,7 +188,7 @@ int main()
 	ft_printf("Teste: *.*x, 10, 2\n");
 	ft_printf("Meu=%*.*x\n",10, 2, x);
 	printf("Ofi=%*.*x\n\n", 10, 2,x);
-*/
+
 	
 	// Teste p
 	char *p;
@@ -228,7 +228,7 @@ int main()
 	ft_printf("Teste: *.*p, 10, 2\n");
 	ft_printf("Meu=%*.*p\n",10, 2, &p);
 	printf("Ofi=%*.*p\n\n", 10, 2,&p);
-
+*/
 	return (0);
 }
 
