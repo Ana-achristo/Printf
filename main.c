@@ -71,7 +71,7 @@ int main()
 	ft_printf("Teste: *.*s, 10, 3\n");
 	ft_printf("Meu=%*.*s\n", 10, 3, s);
 	printf("Ofi=%*.*s\n\n", 10, 3, s);
-*/
+
 	// Teste d
 	int d = 543;
 
@@ -110,6 +110,84 @@ int main()
 	ft_printf("Teste: *.*d,5, 2\n");
 	ft_printf("Meu=%*.*d\n",5, 2, d);
 	printf("Ofi=%*.*d\n\n", 5, 2,d);
+
+	// Teste u
+	unsigned int u = 123;
+
+	ft_printf("Teste: u\n");
+	ft_printf("Meu=%u\n", u);
+	printf("Ofi=%u\n\n", u);
+
+	ft_printf("Teste: 5u\n");
+	ft_printf("Meu=%5u\n", u);
+	printf("Ofi=%5u\n\n", u);
+
+	ft_printf("Teste: -5u\n");
+	ft_printf("Meu=%-5u\n", u);
+	printf("Ofi=%-5u\n\n", u);
+
+	ft_printf("Teste: 05u\n");
+	ft_printf("Meu=%05u\n", u);
+	printf("Ofi=%05u\n\n", u);
+
+	ft_printf("Teste:-05u\n");
+	ft_printf("Meu=%-05u\n", u);
+	printf("Ofi=%-05u\n\n", u);
+	
+	ft_printf("Teste: *u,5\n");
+	ft_printf("Meu=%*u\n",5, u);
+	printf("Ofi=%*u\n\n", 5,u);
+
+	ft_printf("Teste: u, u\n");
+	ft_printf("Meu=%u, %u\n", u, u);
+	printf("Ofi=%u, %u\n\n", u,u);
+
+	ft_printf("Teste: 5.2u\n");
+	ft_printf("Meu=%5.2u\n", u);
+	printf("Ofi=%5.2u\n\n", u);
+
+	ft_printf("Teste: *.*u,5, 2\n");
+	ft_printf("Meu=%*.*u\n",5, 2, u);
+	printf("Ofi=%*.*u\n\n", 5, 2,u);
+*/
+	// Teste x, X
+	int x = 0x1A2B3C4D;
+
+	ft_printf("Teste: x\n");
+	ft_printf("Meu=%x\n", x);
+	printf("Ofi=%x\n\n", x);
+
+	ft_printf("Teste: 10X\n");
+	ft_printf("Meu=%10X\n", x);
+	printf("Ofi=%10X\n\n", x);
+
+	ft_printf("Teste: -10x\n");
+	ft_printf("Meu=%-10x\n", x);
+	printf("Ofi=%-10x\n\n", x);
+
+	ft_printf("Teste: 010x\n");
+	ft_printf("Meu=%010x\n", x);
+	printf("Ofi=%010x\n\n", x);
+
+	ft_printf("Teste:-010x\n");
+	ft_printf("Meu=%-010x\n", x);
+	printf("Ofi=%-010x\n\n", x);
+	
+	ft_printf("Teste: *X,10\n");
+	ft_printf("Meu=%*X\n",10, x);
+	printf("Ofi=%*X\n\n", 10,x);
+
+	ft_printf("Teste: x, x\n");
+	ft_printf("Meu=%x, %x\n", x, x);
+	printf("Ofi=%x, %x\n\n", x, x);
+
+	ft_printf("Teste: 10.2X\n");
+	ft_printf("Meu=%10.2X\n", x);
+	printf("Ofi=%10.2X\n\n", x);
+
+	ft_printf("Teste: *.*x, 10, 2\n");
+	ft_printf("Meu=%*.*x\n",10, 2, x);
+	printf("Ofi=%*.*x\n\n", 10, 2,x);
 
 	return (0);
 }

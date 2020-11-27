@@ -1,50 +1,5 @@
 #include "printf.h"
 
-/*
-
-void	ft_format_read(const char *s, va_list lst)
-{
-	int 	i;
-	int	class;
-	char	*value_s;
-	int	value_d;
-	char	value_c;
-	unsigned int	value_u;
-	int	value_x;
-	char	a;
-
-	while(s[i] != '\0')
-	{
-		if (s[i] == '%')
-		{
-			class = s[i + 1];
-
-			else if (class == 'u')
-			{
-				value_u = va_arg(lst, unsigned int);
-				ft_putstr(ft_itoa_unsigned(value_u));
-			}
-			else if (class == 'x')
-			{
-				a = 'a';
-				value_x = va_arg(lst, int);
-				ft_putstr(ft_itoa_base(value_x, 16, a));
-			}
-			else if (class == 'X')
-			{
-				a = 'A';
-				value_x = va_arg(lst, int);
-				ft_putstr(ft_itoa_base(value_x, 16, a));
-			}
-			i++;
-		}
-		else
-			ft_putchar(s[i]);
-		i++;
-	}
-
-}*/
-
 void	ft_putdata(t_flags param, va_list lst)
 {
 	if(param.converter == 'c')
@@ -55,6 +10,10 @@ void	ft_putdata(t_flags param, va_list lst)
 		ft_printf_d(param, lst);
 	if(param.converter == 'u')
 		ft_printf_u(param, lst);
+	if(param.converter == 'x')
+		ft_printf_x(param, lst, 'a');
+	if(param.converter == 'X')
+		ft_printf_x(param, lst, 'A');
 }
 
 

@@ -32,6 +32,8 @@ void	ft_print(char *value, int width, char c, int minus);
 int	ft_printf_c(t_flags param, va_list lst);
 void	ft_printf_s(t_flags param, va_list lst);
 void	ft_printf_d(t_flags param, va_list lst);
+void	ft_printf_u(t_flags param, va_list lst);
+void	ft_printf_x(t_flags param, va_list lst, char a);
 char	*ft_itoa(int n);
 char	*ft_itoa_unsigned(unsigned int n);
 char	*ft_itoa_base(int n, int base, char a);
