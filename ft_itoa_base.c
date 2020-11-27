@@ -1,6 +1,6 @@
 #include "printf.h"
 
-int	ft_size_number_b(unsigned int n, int base)
+int	ft_size_number_b(unsigned long int n, int base)
 {
 	int size;
 
@@ -14,7 +14,7 @@ int	ft_size_number_b(unsigned int n, int base)
 	return (size);
 }
 
-char *ft_itoa_base(int n, int base, char a)
+char *ft_itoa_base(unsigned long int n, int base, char a)
 {
 	int	size;
 	char	*s;

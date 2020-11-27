@@ -12,7 +12,7 @@ void	ft_printf_x(t_flags param, va_list lst, char a)
 	if(param.starp == 1)
 		param.precision = va_arg(lst, int);
 	value_x = va_arg(lst, int);
-	value = ft_itoa_base(value_x, 16, a);
+	value = ft_itoa_base((unsigned long int)value_x, 16, a);
 	if(param.precision != 0)
 		value = ft_substr(value, 0, param.precision);
 	if(param.zero == 1)

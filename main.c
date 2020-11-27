@@ -149,7 +149,7 @@ int main()
 	ft_printf("Teste: *.*u,5, 2\n");
 	ft_printf("Meu=%*.*u\n",5, 2, u);
 	printf("Ofi=%*.*u\n\n", 5, 2,u);
-*/
+
 	// Teste x, X
 	int x = 0x1A2B3C4D;
 
@@ -188,6 +188,46 @@ int main()
 	ft_printf("Teste: *.*x, 10, 2\n");
 	ft_printf("Meu=%*.*x\n",10, 2, x);
 	printf("Ofi=%*.*x\n\n", 10, 2,x);
+*/
+	
+	// Teste p
+	char *p;
+
+	ft_printf("Teste: p\n");
+	ft_printf("Meu=%p\n", &p);
+	printf("Ofi=%p\n\n", &p);
+
+	ft_printf("Teste: 20p\n");
+	ft_printf("Meu=%20p\n", &p);
+	printf("Ofi=%20p\n\n", &p);
+
+	ft_printf("Teste: -20p\n");
+	ft_printf("Meu=%-20p\n", &p);
+	printf("Ofi=%-20p\n\n", &p);
+
+	ft_printf("Teste: 020p\n");
+	ft_printf("Meu=%020p\n", &p);
+	printf("Ofi=%020p\n\n", &p);
+
+	ft_printf("Teste:-020p\n");
+	ft_printf("Meu=%-020p\n", &p);
+	printf("Ofi=%-020p\n\n", &p);
+	
+	ft_printf("Teste: *p,20\n");
+	ft_printf("Meu=%*p\n",20, &p);
+	printf("Ofi=%*p\n\n", 20,&p);
+
+	ft_printf("Teste: p, p\n");
+	ft_printf("Meu=%p, %p\n", &p, &p);
+	printf("Ofi=%p, %p\n\n", &p, &p);
+
+	ft_printf("Teste: 10.2p\n");
+	ft_printf("Meu=%10.2p\n", &p);
+	printf("Ofi=%10.2p\n\n", &p);
+
+	ft_printf("Teste: *.*p, 10, 2\n");
+	ft_printf("Meu=%*.*p\n",10, 2, &p);
+	printf("Ofi=%*.*p\n\n", 10, 2,&p);
 
 	return (0);
 }

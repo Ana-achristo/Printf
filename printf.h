@@ -34,8 +34,9 @@ void	ft_printf_s(t_flags param, va_list lst);
 void	ft_printf_d(t_flags param, va_list lst);
 void	ft_printf_u(t_flags param, va_list lst);
 void	ft_printf_x(t_flags param, va_list lst, char a);
+void	ft_printf_p(t_flags param, va_list lst, char a);
 char	*ft_itoa(int n);
 char	*ft_itoa_unsigned(unsigned int n);
-char	*ft_itoa_base(int n, int base, char a);
+char	*ft_itoa_base(unsigned long int n, int base, char a);
 
 #endif
