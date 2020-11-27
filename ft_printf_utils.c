@@ -17,3 +17,29 @@ void	ft_putstr(char *s)
 	}
 }	
 
+int	ft_strlen(char *s)
+{
+	int	i;
+
+	i = 0;
+	while(s[i] != '\0')
+		i++;
+	return(i);
+}
+
+char *ft_substr(char *s, int start, int len)
+{
+	char *sub;
+	int i;
+	
+	sub = malloc((len + 1) * sizeof(char));
+	sub[len] = '\0';
+	i = 0;
+	while (i < len & s[start + i] != '\0')
+	{
+		sub[i] = s[start + i];
+		i++;
+	}
+	return (sub);
+
+}
