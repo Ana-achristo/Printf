@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_size_number(int n)
 {
