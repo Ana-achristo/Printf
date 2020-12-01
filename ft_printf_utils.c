@@ -35,7 +35,7 @@ char *ft_substr(char *s, int start, int len)
 	sub = malloc((len + 1) * sizeof(char));
 	sub[len] = '\0';
 	i = 0;
-	while (i < len & s[start + i] != '\0')
+	while ((i < len) & (s[start + i] != '\0'))
 	{
 		sub[i] = s[start + i];
 		i++;

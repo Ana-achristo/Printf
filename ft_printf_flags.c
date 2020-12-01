@@ -71,17 +71,17 @@ t_flags ft_number(const char *s, int j, t_flags param, int worp)
 t_flags	ft_identify(const char *s, int j, t_flags param)
 {
 	j = j + 1;
-	while (ft_isclass(s[j]) == 0 & s[j] != '\0')
+	while ((ft_isclass(s[j]) == 0) & (s[j] != '\0'))
 	{
-		if ((s[j] == '.') & ft_isnumber(s[j + 1]) == 1)
+		if ((s[j] == '.') & (ft_isnumber(s[j + 1]) == 1))
 			param = ft_number(s, j + 1, param, 1);
-		else if (s[j] == '.' & s[j + 1] == '*')
+		else if ((s[j] == '.') & (s[j + 1] == '*'))
 			param.starp = 1;
-		else if (s[j] == '*' & s[j - 1] != '.')
+		else if ((s[j] == '*') & (s[j - 1] != '.'))
 			param.starw = 1;
 		else if (ft_isnumber(s[j]) == 1)
 		{
-			if ((s[j] == '0') & ft_isnumber(s[j - 1])== 0)
+			if ((s[j] == '0') & (ft_isnumber(s[j - 1])== 0))
 				param.zero = 1;
 			else
 				param = ft_number(s, j, param, 0);

@@ -91,9 +91,9 @@ int main()
 	ft_printf("Meu=%05d\n", d);
 	printf("Ofi=%05d\n\n", d);
 
-	ft_printf("Teste:-05d\n");
-	ft_printf("Meu=%-05d\n", d);
-	printf("Ofi=%-05d\n\n", d);
+//	ft_printf("Teste:-05d\n");
+//	ft_printf("Meu=%-05d\n", d);
+//	printf("Ofi=%-05d\n\n", d);
 	
 	ft_printf("Teste: *i,5\n");
 	ft_printf("Meu=%*i\n",5, d);
