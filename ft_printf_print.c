@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-/*int	ft_printfirst(char *value)
+int	ft_printfirst(char *value)
 {
 	int	n_add;
 
@@ -15,22 +15,25 @@
 	}
 	n_add = n_add + 1;
 	return(n_add);
-}*/
+}
 
 
 
 int	ft_print(char *value, int width, char c, int minus)
 {
 	int i;
-	int l;
+	int len;
 	int n_add;
 
 	n_add = 0;
-//	if (value[0] == '-' || value [0] == 'x')
-//		n_add = ft_printfirst(value);
-	l = ft_strlen(value);
-	width = width - l;
-//	value = ft_substr(value, n_add, (l - n_add));
+	len = ft_strlen(value);
+	width = width - len;
+	if(c == '0')
+	{
+		if (value[0] == '-' || value [0] == 'x')
+			n_add = ft_printfirst(value);
+		value = ft_substr(value, n_add, (len - n_add));
+	}
 	i = 0;
 	if (minus == 1)
 		n_add = ft_putstr(value);
