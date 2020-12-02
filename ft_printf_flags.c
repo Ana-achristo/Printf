@@ -101,14 +101,14 @@ t_flags	ft_identify(const char *s, int j, t_flags param)
 	if (ft_isclass(s[j]) == 1)
 		param.converter = s[j];
 	param.position = j;
-
-/*	printf("width: %d\n", param.width);
+/*
+	printf("width: %d\n", param.width);
 	printf("minus: %d\n", param.minus);
 	printf("zero: %d\n", param.zero);
 	printf("precision: %d\n", param.precision);
 	printf("converter: %c\n", param.converter);
 	printf("position: %d\n", param.position);
 	printf("starw: %d\n", param.starw);
-	printf("starp: %d\n", param.starp);*/
-	return (param);
+	printf("starp: %d\n", param.starp);
+*/	return (param);
 }

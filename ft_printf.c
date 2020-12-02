@@ -31,11 +31,12 @@ int	ft_format_read(const char *s, va_list lst)
 
 	i = 0;
 	n = 0;
-	param = ft_flags_init(param);
+	param.converter = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == '%')
 		{
+			param = ft_flags_init(param);
 			param = ft_identify(s, i, param);
 			i = param.position;	
 			n = n + ft_putdata(param, lst);
