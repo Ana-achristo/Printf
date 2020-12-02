@@ -254,8 +254,13 @@ int main()
 
 	printf("Ofi = %0*.d\n", 5, -12);
 	ft_printf("Meu = %0*.d\n", 5, -12);
-*/
+
 	printf("Ofi = %*s\n",-5, "abc");
 	ft_printf("Meu = %*s\n",-5, "abc");
+*/
+	char	*q = "0";
+
+	printf("Ofi = %.*s, %.*s\n", 14, q, 3, q);
+	ft_printf("Meu = %.*s, %.*s\n", 14, q, 3, q);
 }
 
