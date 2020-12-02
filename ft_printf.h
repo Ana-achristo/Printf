@@ -33,6 +33,7 @@ int	ft_print(char *value, int width, char c, int minus);
 int	ft_printf_c(t_flags param, va_list lst);
 int	ft_printf_s(t_flags param, va_list lst);
 int	ft_printf_d(t_flags param, va_list lst);
+t_flags	ft_read_star(va_list lst, int worp, t_flags param);
 int	ft_printf_u(t_flags param, va_list lst);
 int	ft_printf_x(t_flags param, va_list lst, char a);
 int	ft_printf_p(t_flags param, va_list lst, char a);
