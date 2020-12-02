@@ -48,7 +48,7 @@ int	ft_printf_d(t_flags param, va_list lst)
 		value = ft_substr(value, 0, 0);
 	//if(param.precision > ft_strlen(value))
 	value = ft_strcomplete(value, param.precision);
-	if(param.zero == 1)
+	if((param.zero == 1) & (param.dot == 0))
 		empty = '0';
 	n_add = ft_print(value, param.width, empty, param.minus);
 	return (n_add);

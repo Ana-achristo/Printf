@@ -252,8 +252,8 @@ int main()
 	printf("Ofi = %0*.*d\n", 5, 3, -12);
 	ft_printf("Meu = %0*.*d\n", 5, 3, -12);
 
-	printf("Ofi = %0*d\n", 5, -12);
-	ft_printf("Meu = %0*d\n", 5, -12);
+	printf("Ofi = %0*.d\n", 5, -12);
+	ft_printf("Meu = %0*.d\n", 5, -12);
 	return (0);
 }
 
