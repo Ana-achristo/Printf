@@ -44,3 +44,39 @@ char *ft_substr(char *s, int start, int len)
 	return (sub);
 
 }
+
+char	*ft_strcomplete(char *s, int precision)
+{
+	char	*new;
+	int	i;
+	int	len;
+	int	j;
+
+	i = 0;
+	j = 0;
+	len = ft_strlen(s);
+	if(s[0] == '-')
+		j = 1;
+	if(s[0] == 'x')
+		j = 2;
+	len = len - j;
+	new = malloc((precision + j + 1) * sizeof(char));
+	new[precision + j] = '\0';
+	while(i < j)
+	{
+		new[i] = s[i];
+		i++;
+	}
+	while(i < (precision - len + j))
+	{
+		new[i] = '0';
+		i++;
+	}
+	while (s[j] != '\0')
+	{
+		new[i] = s[j];
+		j++;
+		i++;
+	}
+	return (new);
+}

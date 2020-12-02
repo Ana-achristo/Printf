@@ -15,7 +15,7 @@ typedef	struct	s_flags
 	int	starp;
 	int	precision;
 	char	converter;
-	int	newline;
+	int	dot;
 	int	position;
 
 }		t_flags;
@@ -25,6 +25,7 @@ int	ft_strlen(char *s);
 void	ft_putchar(char c);
 int	ft_putstr(char *s);
 char	*ft_substr(char *s, int start, int len);
+char	*ft_strcomplete(char *s, int precision);
 int	ft_printf(const char *format, ...);
 t_flags	ft_flags_init(t_flags param);
 t_flags	ft_identify(const char *s, int j, t_flags param);

@@ -16,6 +16,8 @@ int	ft_printf_u(t_flags param, va_list lst)
 	value = ft_itoa_unsigned(value_u);
 	if(param.precision != 0)
 		value = ft_substr(value, 0, param.precision);
+	if(param.precision > ft_strlen(value))
+		value = ft_strcomplete(value, param.precision);
 	if(param.zero == 1)
 		empty = '0';
 	n_add = ft_print(value, param.width, empty, param.minus);

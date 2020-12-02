@@ -9,8 +9,8 @@ t_flags	ft_flags_init(t_flags param)
 	param.starp = 0;
 	param.precision = 0;
 	param.converter = '0';
-	param.newline = 0;
-	param.position = 0;	
+	param.dot = 0;
+	param.position = 0;
 
 	return (param);
 }
@@ -81,7 +81,6 @@ t_flags	ft_identify(const char *s, int j, t_flags param)
 			param.starw = 1;
 		else if (ft_isnumber(s[j]) == 1)
 		{
-			printf("cheguei");
 			if ((s[j] == '0') & (ft_isnumber(s[j - 1])== 0))
 				param.zero = 1;
 			else
@@ -89,6 +88,8 @@ t_flags	ft_identify(const char *s, int j, t_flags param)
 		}		
 		else if (s[j] == '-')
 		       		param.minus = 1;
+		if(s[j] == '.')
+			param.dot = 1;
 		if (param.position != 0)
 		{
 			j = param.position;
