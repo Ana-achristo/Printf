@@ -21,12 +21,13 @@ char	*ft_value_p(char *value_numb)
 }
 
 
-void	ft_printf_p(t_flags param, va_list lst, char a)
+int	ft_printf_p(t_flags param, va_list lst, char a)
 {
 	unsigned long int value_p;
 	char	*value_numb;
 	char	*value;
 	char	empty;
+	int	n_add;
 
 	empty = ' ';
 	if(param.starw == 1)
@@ -40,5 +41,6 @@ void	ft_printf_p(t_flags param, va_list lst, char a)
 		value = ft_substr(value, 0, param.precision);
 	if(param.zero == 1)
 		empty = '0';
-	ft_print(value, param.width, empty, param.minus);
+	n_add = ft_print(value, param.width, empty, param.minus);
+	return(n_add);
 }

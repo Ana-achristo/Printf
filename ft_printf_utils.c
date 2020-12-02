@@ -5,7 +5,7 @@ void ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
 	int	i;
 
@@ -15,6 +15,7 @@ void	ft_putstr(char *s)
 		ft_putchar(s[i]);
 		i = i + 1;
 	}
+	return (i);
 }	
 
 int	ft_strlen(char *s)

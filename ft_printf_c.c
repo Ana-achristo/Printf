@@ -29,5 +29,5 @@ int ft_printf_c(t_flags param, va_list lst)
 	if (param.zero == 1)
 		empty = '0';
 	ft_print_width_c(value, param.width, empty, param.minus); 
-	return (0);	
+	return (1);	
 }

@@ -71,7 +71,7 @@ int main()
 	ft_printf("Teste: *.*s, 10, 3\n");
 	ft_printf("Meu=%*.*s\n", 10, 3, s);
 	printf("Ofi=%*.*s\n\n", 10, 3, s);
-*/
+
 	// Teste d e i
 	int d = 543;
 
@@ -111,7 +111,7 @@ int main()
 	ft_printf("Meu=%*.*d\n",5, 2, d);
 	printf("Ofi=%*.*d\n\n", 5, 2,d);
 
-/*	// Teste u
+	// Teste u
 	unsigned int u = 123;
 
 	ft_printf("Teste: u\n");
@@ -229,6 +229,16 @@ int main()
 	ft_printf("Meu=%*.*p\n",10, 2, &p);
 	printf("Ofi=%*.*p\n\n", 10, 2,&p);
 */
+	int n;
+	int m;
+
+	n = printf("abc = %s\n", "Ana Banana");
+	printf("n = %d\n", n);
+
+	m = ft_printf("abc = %s\n", "Ana Banana");
+	printf("m = %d\n", m);
+
+
 	return (0);
 }
 
