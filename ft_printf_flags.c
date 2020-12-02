@@ -39,7 +39,7 @@ int	ft_isnumber(char c)
 	int	res;
 
 	i = 0;
-	numbers = "012345789";
+	numbers = "0123456789";
 	res = 0;
 	while (i <= 10)
 	{
@@ -81,6 +81,7 @@ t_flags	ft_identify(const char *s, int j, t_flags param)
 			param.starw = 1;
 		else if (ft_isnumber(s[j]) == 1)
 		{
+			printf("cheguei");
 			if ((s[j] == '0') & (ft_isnumber(s[j - 1])== 0))
 				param.zero = 1;
 			else
@@ -101,8 +102,8 @@ t_flags	ft_identify(const char *s, int j, t_flags param)
 	if (ft_isclass(s[j]) == 1)
 		param.converter = s[j];
 	param.position = j;
-/*
-	printf("width: %d\n", param.width);
+
+/*	printf("width: %d\n", param.width);
 	printf("minus: %d\n", param.minus);
 	printf("zero: %d\n", param.zero);
 	printf("precision: %d\n", param.precision);
