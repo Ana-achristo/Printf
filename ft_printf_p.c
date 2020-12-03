@@ -31,14 +31,15 @@ int	ft_printf_p(t_flags param, va_list lst, char a)
 
 	empty = ' ';
 	if(param.starw == 1)
-		param.width = va_arg(lst, int);
+		param = ft_read_star(lst, 0, param);
 	if(param.starp == 1)
-		param.precision = va_arg(lst, int);
+		param = ft_read_star(lst, 1, param);
 	value_p = va_arg(lst, unsigned long int);
 	value_numb = ft_itoa_base(value_p, 16, a);
 	value = ft_value_p(value_numb);
-	if(param.precision != 0)
-		value = ft_substr(value, 0, param.precision);
+	if((value_p == 0) & (param.dot == 1) & (param.precision == 0))
+		value = ft_substr(value, 0, 0);
+	value = ft_strcomplete(value, param.precision);
 	if(param.zero == 1)
 		empty = '0';
 	n_add = ft_print(value, param.width, empty, param.minus);
