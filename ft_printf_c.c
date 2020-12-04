@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_print_width_c(char value, int width, char c, int minus)
+int	ft_print_width_c(char value, int width, char c, int minus)
 {
 	int i;
 	
@@ -14,20 +14,21 @@ void	ft_print_width_c(char value, int width, char c, int minus)
 	}
 	if (minus == 0)
 		ft_putchar(value);
-
+	return(i);
 }
 
 int ft_printf_c(t_flags param, va_list lst)
 {
 	char	value;
 	char	empty;
+	int	n_add;
 
 	empty = ' ';
 	if (param.starw == 1)
-		param.width = va_arg(lst, int);
+		param = ft_read_star(lst, 0, param);
 	value = va_arg(lst, int);
 	if (param.zero == 1)
 		empty = '0';
-	ft_print_width_c(value, param.width, empty, param.minus); 
-	return (1);	
+	n_add = ft_print_width_c(value, param.width, empty, param.minus); 
+	return (n_add);	
 }
