@@ -22,10 +22,10 @@ $(OBJECTS):
 	ar rcs $(NAME) $(OBJECTS)
 
 clean:
-	rm -f *.o
+	rm -f $(OBJECTS)
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f *.gch
+	rm -f ft_printf.h.gch
 
 re: fclean all

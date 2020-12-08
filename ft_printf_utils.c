@@ -57,7 +57,7 @@ char	*ft_strcomplete(char *s, int precision)
 	len = ft_strlen(s);
 	if(s[0] == '-')
 		j = 1;
-	if(s[0] == 'x')
+	if((s[0] == '0') & (s[1]=='x'))
 		j = 2;
 	len = len - j;
 	new = malloc((precision + j + 1) * sizeof(char));
