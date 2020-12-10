@@ -232,6 +232,7 @@ int main()
 	ft_printf("Teste:.20p\n");
 	ft_printf("Meu=%.20p\n", &p);
 	printf("Ofi=%.20p\n\n", &p);
+
 	//Teste precisão
 /*	char	*p;
 
