@@ -9,6 +9,8 @@ int	ft_putstr(char *s)
 {
 	int	i;
 
+	if (s == 0)
+		return (0);
 	i = 0;
 	while(s[i] != '\0')
 	{
@@ -18,34 +20,45 @@ int	ft_putstr(char *s)
 	return (i);
 }	
 
-int	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	int	i;
+	size_t	len;
 
 	i = 0;
+	len = 0;
 	while(s[i] != '\0')
-		i++;
-	return(i);
-}
-
-char *ft_substr(char *s, int start, int len)
-{
-	char *sub;
-	int i;
-	
-	sub = malloc((len + 1) * sizeof(char));
-	sub[len] = '\0';
-	i = 0;
-	while ((i < len) & (s[start + i] != '\0'))
 	{
-		sub[i] = s[start + i];
+		len = len + 1;
 		i++;
 	}
+	return(len);
+}
+
+char *ft_substr(const char *s, unsigned int start, size_t len)
+{
+	char	*sub;
+	size_t	i;
+	size_t	start_copy;
+
+	start_copy = ((size_t)start);
+	if (s == 0)
+		return (0);
+	sub = malloc((len + 1) * sizeof(char));
+	if (sub == 0)
+		return (0);
+	i = 0;
+	while ((i < len) & (s[start_copy + i] != '\0'))
+	{
+		sub[i] = s[start_copy + i];
+		i++;
+	}
+	sub[i] = '\0';
 	return (sub);
 
 }
 
-char	*ft_strcomplete(char *s, int precision)
+char	*ft_strcomplete(const char *s, int precision)
 {
 	char	*new;
 	int	i;
@@ -55,9 +68,11 @@ char	*ft_strcomplete(char *s, int precision)
 	i = 0;
 	j = 0;
 	len = ft_strlen(s);
+	if (s == 0)
+		return (0);
 	if(s[0] == '-')
 		j = 1;
-	if((s[0] == '0') & (s[1]=='x'))
+	if((len > 1) & (s[0] == '0') & (s[1]=='x'))
 		j = 2;
 	len = len - j;
 	new = malloc((precision + j + 1) * sizeof(char));
