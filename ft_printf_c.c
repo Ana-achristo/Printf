@@ -26,7 +26,10 @@ int ft_printf_c(t_flags param, va_list lst)
 	empty = ' ';
 	if (param.starw == 1)
 		param = ft_read_star(lst, 0, param);
-	value = va_arg(lst, int);
+	if (param.converter == '%')
+		value = '%';
+	else
+		value = va_arg(lst, int);
 	if (param.zero == 1)
 		empty = '0';
 	n_add = ft_print_width_c(value, param.width, empty, param.minus); 

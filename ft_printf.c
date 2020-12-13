@@ -20,10 +20,7 @@ int	ft_putdata(t_flags param, va_list lst)
 	if(param.converter == 'p')
 		n_add = ft_printf_p(param, lst, 'a');
 	if(param.converter == '%')
-	{
-		ft_putchar('%');
-		n_add = 1;
-	}
+		n_add = ft_printf_c(param, lst);
 	return (n_add);
 }
 

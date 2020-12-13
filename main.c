@@ -283,7 +283,7 @@ int main()
 	n = printf(NULL);
 	m = ft_printf(NULL);
 	printf("n= %d, m= %d\n", n, m);
-
+*/
 	printf("teste larg=5\n");
 	printf("%5%\n");
 	ft_printf("%5%\n");
@@ -299,10 +299,10 @@ int main()
 	printf("teste larg=5 e flag*\n");
 	printf("%*%\n", 5);
 	ft_printf("%*%\n", 5);
-*/
-	printf("teste precisão = 0\n");
-	printf("%.0%\n");
-	ft_printf("%.0%\n");
+
+//	printf("teste precisão = 0\n");
+//	printf("%.0%\n");
+//	ft_printf("%.0%\n");
 	return (0);
 }
 
