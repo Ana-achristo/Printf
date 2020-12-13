@@ -11,18 +11,18 @@ t_flags	ft_flags_init(t_flags param)
 	param.converter = '0';
 	param.dot = 0;
 	param.position = 0;
-
 	return (param);
 }
 
-int	ft_isclass(char c)
+int		ft_isclass(char c)
 {
-	char	*class = "cspdiuxX%";
-	int	i;
-	int	res;
+	char	*class;
+	int		i;
+	int		res;
 
 	i = 0;
 	res = 0;
+	class = "cspdiuxX%";
 	while (i < 9)
 	{
 		if (class[i] == c)
@@ -32,30 +32,30 @@ int	ft_isclass(char c)
 	return (res);
 }
 
-int	ft_isnumber(char c)
+int		ft_isnumber(char c)
 {
 	char	*numbers;
-	int	i;
-	int	res;
+	int		i;
+	int		res;
 
 	i = 0;
 	numbers = "0123456789";
 	res = 0;
 	while (i <= 10)
 	{
-		if(numbers[i] == c)
+		if (numbers[i] == c)
 			res = 1;
 		i++;
 	}
 	return (res);
 }
 
-t_flags ft_number(const char *s, int j, t_flags param, int worp)
+t_flags	ft_number(const char *s, int j, t_flags param, int worp)
 {
 	int sum;
 
 	sum = 0;
-	while(ft_isnumber(s[j]) == 1)
+	while (ft_isnumber(s[j]) == 1)
 	{
 		sum = 10 * sum + s[j] - '0';
 		j++;
@@ -81,14 +81,14 @@ t_flags	ft_identify(const char *s, int j, t_flags param)
 			param.starw = 1;
 		else if (ft_isnumber(s[j]) == 1)
 		{
-			if ((s[j] == '0') & (ft_isnumber(s[j - 1])== 0))
+			if ((s[j] == '0') & (ft_isnumber(s[j - 1]) == 0))
 				param.zero = 1;
 			else
 				param = ft_number(s, j, param, 0);
-		}		
+		}
 		else if (s[j] == '-')
-		       		param.minus = 1;
-		if(s[j] == '.')
+			param.minus = 1;
+		if (s[j] == '.')
 			param.dot = 1;
 		if (param.position != 0)
 		{
@@ -96,21 +96,12 @@ t_flags	ft_identify(const char *s, int j, t_flags param)
 			param.position = 0;
 		}
 		else
-				j++;
+			j++;
 	}
-	if(param.minus == 1)
+	if (param.minus == 1)
 		param.zero = 0;
 	if (ft_isclass(s[j]) == 1)
 		param.converter = s[j];
 	param.position = j;
-
-/*	printf("width: %d\n", param.width);
-	printf("minus: %d\n", param.minus);
-	printf("zero: %d\n", param.zero);
-	printf("precision: %d\n", param.precision);
-	printf("converter: %c\n", param.converter);
-	printf("position: %d\n", param.position);
-	printf("starw: %d\n", param.starw);
-	printf("starp: %d\n", param.starp);
-*/	return (param);
+	return (param);
 }

@@ -2,33 +2,32 @@
 
 int	ft_putdata(t_flags param, va_list lst)
 {
-	int n_add;
+	int	n_add;
 
 	n_add = 0;
-	if(param.converter == 'c')
+	if (param.converter == 'c')
 		n_add = ft_printf_c(param, lst);
-	if(param.converter == 's')
+	if (param.converter == 's')
 		n_add = ft_printf_s(param, lst);
-	if(param.converter == 'd' || param.converter == 'i')
+	if (param.converter == 'd' || param.converter == 'i')
 		n_add = ft_printf_d(param, lst);
-	if(param.converter == 'u')
+	if (param.converter == 'u')
 		n_add = ft_printf_u(param, lst);
-	if(param.converter == 'x')
+	if (param.converter == 'x')
 		n_add = ft_printf_x(param, lst, 'a');
-	if(param.converter == 'X')
+	if (param.converter == 'X')
 		n_add = ft_printf_x(param, lst, 'A');
-	if(param.converter == 'p')
+	if (param.converter == 'p')
 		n_add = ft_printf_p(param, lst, 'a');
-	if(param.converter == '%')
+	if (param.converter == '%')
 		n_add = ft_printf_c(param, lst);
 	return (n_add);
 }
 
-
 int	ft_format_read(const char *s, va_list lst)
 {
-	int i;
-	int n;
+	int		i;
+	int		n;
 	t_flags	param;
 
 	i = 0;
@@ -40,7 +39,7 @@ int	ft_format_read(const char *s, va_list lst)
 		{
 			param = ft_flags_init(param);
 			param = ft_identify(s, i, param);
-			i = param.position;	
+			i = param.position;
 			n = n + ft_putdata(param, lst);
 		}
 		else
@@ -53,15 +52,13 @@ int	ft_format_read(const char *s, va_list lst)
 	return (n);
 }
 
-
-int ft_printf(const char *format,...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	lst;
-	int n;
+	int		n;
 
 	va_start(lst, format);
 	n = ft_format_read(format, lst);
 	va_end(lst);
-
 	return (n);
 }

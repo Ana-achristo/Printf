@@ -5,19 +5,17 @@ int	ft_printfirst(char *value)
 	int	n_add;
 
 	n_add = 0;
-	if(value[0] == '-')
+	if (value[0] == '-')
 		ft_putchar('-')	;
-	if(value[0] == '0')
+	if (value[0] == '0')
 	{
 		ft_putchar('0');
 		ft_putchar('x');
 		n_add = 1;
 	}
 	n_add = n_add + 1;
-	return(n_add);
+	return (n_add);
 }
-
-
 
 int	ft_print(char *value, int width, char c, int minus)
 {
@@ -28,7 +26,7 @@ int	ft_print(char *value, int width, char c, int minus)
 	n_add = 0;
 	len = ft_strlen(value);
 	width = width - len;
-	if(c == '0')
+	if (c == '0')
 	{
 		if ((value[0] == '-') || ((value[0] == '0') & (value[1] == 'x')))
 			n_add = ft_printfirst(value);
@@ -37,7 +35,7 @@ int	ft_print(char *value, int width, char c, int minus)
 	i = 0;
 	if (minus == 1)
 		n_add = ft_putstr(value);
-	while(i < width)
+	while (i < width)
 	{
 		ft_putchar(c);
 		n_add = n_add + 1;

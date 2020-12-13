@@ -1,8 +1,8 @@
 #include "ft_printf.h"
 
-int	ft_size_number(int n)
+int		ft_size_number(int n)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	if (n == -2147483648)
@@ -21,14 +21,14 @@ int	ft_size_number(int n)
 	return (size);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int	i;
-	int	size;
+	int		i;
+	int		size;
 	char	*s;
 
 	size = ft_size_number(n);
-	s = malloc((size+1)*sizeof(char));
+	s = malloc((size + 1) * sizeof(char));
 	if (s == 0)
 		return (0);
 	i = 0;
@@ -44,7 +44,7 @@ char *ft_itoa(int n)
 		if (n < 0)
 			s[size] = (n % 10) * -1 + 48;
 		else
-			s[size] = n % 10 + 48;	
+			s[size] = n % 10 + 48;
 		n = n / 10;
 		size--;
 	}
