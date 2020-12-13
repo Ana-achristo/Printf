@@ -34,11 +34,14 @@ int	ft_printf_p(t_flags param, va_list lst, char a)
 		param = ft_read_star(lst, 0, param);
 	if(param.starp == 1)
 		param = ft_read_star(lst, 1, param);
-	value_p = va_arg(lst, unsigned long int);
+	value_p = va_arg(lst, unsigned long int);	
 	value_numb = ft_itoa_base(value_p, 16, a);
 	value = ft_value_p(value_numb);
 	if((value_p == 0) & (param.dot == 1) & (param.precision == 0))
-		value = ft_substr(value, 0, 0);
+	{
+		value = malloc(3 * sizeof(char));
+		value = "0x";
+	}
 	value = ft_strcomplete(value, param.precision);
 	if((param.zero == 1) & (param.dot == 0))
 		empty = '0';
