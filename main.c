@@ -193,11 +193,11 @@ int main()
 	ft_printf("Meu=%*.*x\n",10, 2, x);
 	printf("Ofi=%*.*x\n\n", 10, 2,x);
 
-*/	
+	
 	// Teste p
 	char *p;
 
-/*	ft_printf("Teste: p\n");
+	ft_printf("Teste: p\n");
 	ft_printf("Meu=%p\n", &p);
 	printf("Ofi=%p\n\n", &p);
 
@@ -208,11 +208,11 @@ int main()
 	ft_printf("Teste: -20p\n");
 	ft_printf("Meu=%-20p\n", &p);
 	printf("Ofi=%-20p\n\n", &p);
-*/
+
 	ft_printf("Teste: 020p\n");
 	ft_printf("Meu=%020p\n", &p);
 	printf("Ofi=%020p\n\n", &p);
-/*
+
 	ft_printf("Teste:-020p\n");
 	ft_printf("Meu=%-020p\n", &p);
 	printf("Ofi=%-020p\n\n", &p);
@@ -228,13 +228,13 @@ int main()
 	ft_printf("Teste: 10.2p\n");
 	ft_printf("Meu=%10.2p\n", &p);
 	printf("Ofi=%10.2p\n\n", &p);
-*/
+
 	ft_printf("Teste:.20p\n");
 	ft_printf("Meu=%.20p\n", &p);
 	printf("Ofi=%.20p\n\n", &p);
 
 	//Teste precisão
-/*	char	*p;
+	char	*p;
 
 //	printf("Ofi = %.5s\n", "abc");
 //	printf("Ofi = %.5d\n", 534);
@@ -283,7 +283,26 @@ int main()
 	n = printf(NULL);
 	m = ft_printf(NULL);
 	printf("n= %d, m= %d\n", n, m);
+
+	printf("teste larg=5\n");
+	printf("%5%\n");
+	ft_printf("%5%\n");
+
+	printf("teste larg=5 e flag0\n");
+	printf("%05%\n");
+	ft_printf("%05%\n");
+
+	printf("teste larg=6 e flag-0\n");
+	printf("%-06%\n");
+	ft_printf("%-06%\n");
+
+	printf("teste larg=5 e flag*\n");
+	printf("%*%\n", 5);
+	ft_printf("%*%\n", 5);
 */
+	printf("teste precisão = 0\n");
+	printf("%.0%\n");
+	ft_printf("%.0%\n");
 	return (0);
 }
 
