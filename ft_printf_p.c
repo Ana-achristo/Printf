@@ -7,7 +7,8 @@ char	*ft_value_p(char *value_numb)
 	int		len;
 
 	len = ft_strlen(value_numb);
-	value = malloc((len + 3) * sizeof(char));
+	if (!(value = malloc((len + 3) * sizeof(char))))
+		return (NULL);
 	value[0] = '0';
 	value[1] = 'x';
 	value[len + 2] = '\0';
@@ -37,7 +38,9 @@ int		ft_printf_p(t_flags param, va_list lst, char a)
 	if ((value_p == 0) & (param.dot == 1) & (param.precision == 0))
 	{
 		value = malloc(3 * sizeof(char));
-		value = "0x";
+		value[0] = '0';
+		value[1] = 'x';
+		value[2] = '\0';
 	}
 	else
 		value = ft_value_p(aux);

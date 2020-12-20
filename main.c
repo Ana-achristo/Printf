@@ -307,8 +307,14 @@ int main()
 */
 //	char *p;
 
-	printf("%.p\n", NULL);
-	ft_printf("%.p\n", NULL);
+	int a;
+	int b;
+
+	a = printf("Ofi=%.p\n", NULL);
+	b = ft_printf("Meu=%.p\n", NULL);
+	printf("a = %d\n", a);
+	printf("b = %d\n", b);
+
 	return (0);
 }
 
