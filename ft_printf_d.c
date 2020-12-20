@@ -34,6 +34,7 @@ int		ft_printf_d(t_flags param, va_list lst)
 	char	*value;
 	char	empty;
 	int		n_add;
+	char	*value_new;
 
 	empty = ' ';
 	if (param.starw == 1)
@@ -41,12 +42,15 @@ int		ft_printf_d(t_flags param, va_list lst)
 	if (param.starp == 1)
 		param = ft_read_star(lst, 1, param);
 	value_d = va_arg(lst, int);
-	value = ft_itoa(value_d);
 	if ((value_d == 0) & (param.dot == 1) & (param.precision == 0))
-		value = ft_substr(value, 0, 0);
-	value = ft_strcomplete(value, param.precision);
+		value = ft_substr("", 0, 0);
+	else
+		value = ft_itoa(value_d);
+	value_new = ft_strcomplete(value, param.precision);
 	if ((param.zero == 1) & (param.dot == 0))
 		empty = '0';
-	n_add = ft_print(value, param.width, empty, param.minus);
+	n_add = ft_print(value_new, param.width, empty, param.minus);
+	free(value);
+	free(value_new);
 	return (n_add);
 }
