@@ -17,11 +17,23 @@ int	ft_printfirst(char *value)
 	return (n_add);
 }
 
-int	ft_print(char *value, int width, char c, int minus)
+int	ft_putempty(char c, int width)
 {
 	int i;
-	int len;
-	int n_add;
+
+	i = 0;
+	while (i < width)
+	{
+		ft_putchar(c);
+		i++;
+	}
+	return (i);
+}
+
+int	ft_print(char *value, int width, char c, int minus)
+{
+	int		len;
+	int		n_add;
 	char	*aux;
 
 	n_add = 0;
@@ -35,15 +47,9 @@ int	ft_print(char *value, int width, char c, int minus)
 	}
 	else
 		aux = ft_substr(value, 0, len);
-	i = 0;
 	if (minus == 1)
 		n_add = ft_putstr(aux);
-	while (i < width)
-	{
-		ft_putchar(c);
-		n_add = n_add + 1;
-		i++;
-	}
+	n_add = n_add + ft_putempty(c, width);
 	if (minus == 0)
 		n_add = n_add + ft_putstr(aux);
 	free(aux);

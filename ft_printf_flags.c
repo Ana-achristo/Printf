@@ -14,42 +14,6 @@ t_flags	ft_flags_init(t_flags param)
 	return (param);
 }
 
-int		ft_isclass(char c)
-{
-	char	*class;
-	int		i;
-	int		res;
-
-	i = 0;
-	res = 0;
-	class = "cspdiuxX%";
-	while (i < 9)
-	{
-		if (class[i] == c)
-			res = 1;
-		i++;
-	}
-	return (res);
-}
-
-int		ft_isnumber(char c)
-{
-	char	*numbers;
-	int		i;
-	int		res;
-
-	i = 0;
-	numbers = "0123456789";
-	res = 0;
-	while (i <= 10)
-	{
-		if (numbers[i] == c)
-			res = 1;
-		i++;
-	}
-	return (res);
-}
-
 t_flags	ft_number(const char *s, int j, t_flags param, int worp)
 {
 	int sum;
@@ -68,6 +32,25 @@ t_flags	ft_number(const char *s, int j, t_flags param, int worp)
 	return (param);
 }
 
+t_flags	ft_checknumber(const char *s, int j, t_flags param)
+{
+	if ((s[j] == '0') & (ft_isnumber(s[j - 1]) == 0))
+		param.zero = 1;
+	else
+		param = ft_number(s, j, param, 0);
+	return (param);
+}
+
+t_flags	ft_identify_end(const char *s, int j, t_flags param)
+{
+	if (param.minus == 1)
+		param.zero = 0;
+	if (ft_isclass(s[j]) == 1)
+		param.converter = s[j];
+	param.position = j;
+	return (param);
+}
+
 t_flags	ft_identify(const char *s, int j, t_flags param)
 {
 	j = j + 1;
@@ -80,12 +63,7 @@ t_flags	ft_identify(const char *s, int j, t_flags param)
 		else if ((s[j] == '*') & (s[j - 1] != '.'))
 			param.starw = 1;
 		else if (ft_isnumber(s[j]) == 1)
-		{
-			if ((s[j] == '0') & (ft_isnumber(s[j - 1]) == 0))
-				param.zero = 1;
-			else
-				param = ft_number(s, j, param, 0);
-		}
+			param = ft_checknumber(s, j, param);
 		else if (s[j] == '-')
 			param.minus = 1;
 		if (s[j] == '.')
@@ -98,10 +76,6 @@ t_flags	ft_identify(const char *s, int j, t_flags param)
 		else
 			j++;
 	}
-	if (param.minus == 1)
-		param.zero = 0;
-	if (ft_isclass(s[j]) == 1)
-		param.converter = s[j];
-	param.position = j;
+	param = ft_identify_end(s, j, param);
 	return (param);
 }

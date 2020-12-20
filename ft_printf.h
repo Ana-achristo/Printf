@@ -20,6 +20,9 @@ typedef	struct	s_flags
 
 }				t_flags;
 
+int				ft_isnumber(char c);
+int				ft_isclass(char c);
+char			*ft_strdup(char	*s);
 size_t			ft_strlen(const char *s);
 void			ft_putchar(char c);
 int				ft_putstr(char *s);

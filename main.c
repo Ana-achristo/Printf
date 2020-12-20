@@ -310,8 +310,8 @@ int main()
 	int a;
 	int b;
 
-	a = printf("Ofi=%.p\n", NULL);
-	b = ft_printf("Meu=%.p\n", NULL);
+	a = printf("Ofi=%lLf", 42.5);
+	b = ft_printf("Meu=lLf", 42.5);
 	printf("a = %d\n", a);
 	printf("b = %d\n", b);
 

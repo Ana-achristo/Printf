@@ -30,8 +30,6 @@ char	*ft_itoa(int n)
 	size = ft_size_number(n);
 	if (!(s = malloc((size + 1) * sizeof(char))))
 		return (NULL);
-	if (s == 0)
-		return (0);
 	i = 0;
 	if (n < 0)
 	{
