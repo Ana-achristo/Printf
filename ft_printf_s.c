@@ -13,7 +13,7 @@ int	ft_printf_s(t_flags param, va_list lst)
 		param = ft_read_star(lst, 1, param);
 	value = va_arg(lst, char*);
 	if (value == NULL)
-		value_new = ft_substr("(null)", 6, 0);
+		value_new = ft_substr("(null)", 0, 6);
 	else
 		value_new = ft_substr(value, 0, ft_strlen(value));
 	if (param.dot == 1)
