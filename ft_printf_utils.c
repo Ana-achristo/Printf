@@ -38,12 +38,14 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-char	*ft_newvalue(const char *s, int new_size, int j, int precision, int len)
+char	*ft_newvalue(const char *s, int new_size, int j, int precision)
 {
-	int	i;
+	int		i;
 	char	*new;
+	int		len;
 
 	i = 0;
+	len = ft_strlen(s) - j;
 	new = malloc((new_size + 1) * sizeof(char));
 	new[new_size] = '\0';
 	while (i < j)
@@ -70,7 +72,7 @@ char	*ft_strcomplete(const char *s, int precision)
 	char	*new;
 	int		len;
 	int		j;
-	int	new_size;
+	int		new_size;
 
 	j = 0;
 	len = ft_strlen(s);
@@ -85,6 +87,6 @@ char	*ft_strcomplete(const char *s, int precision)
 		new_size = precision + j;
 	else
 		new_size = len + j;
-	new = ft_newvalue(s, new_size, j, precision, len);
+	new = ft_newvalue(s, new_size, j, precision);
 	return (new);
 }
