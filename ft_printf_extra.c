@@ -1,6 +1,26 @@
 #include "ft_printf.h"
 
-int	ft_isclass(char c)
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int		ft_putstr(char *s)
+{
+	int	i;
+
+	if (s == 0)
+		return (0);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ft_putchar(s[i]);
+		i = i + 1;
+	}
+	return (i);
+}
+
+int		ft_isclass(char c)
 {
 	char	*class;
 	int		i;
@@ -19,7 +39,7 @@ int	ft_isclass(char c)
 	return (res);
 }
 
-int	ft_isnumber(char c)
+int		ft_isnumber(char c)
 {
 	char	*numbers;
 	int		i;
