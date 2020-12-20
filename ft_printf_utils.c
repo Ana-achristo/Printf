@@ -38,25 +38,14 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-char	*ft_strcomplete(const char *s, int precision)
+char	*ft_newvalue(const char *s, int new_size, int j, int precision, int len)
 {
+	int	i;
 	char	*new;
-	int		i;
-	int		len;
-	int		j;
 
 	i = 0;
-	j = 0;
-	len = ft_strlen(s);
-	if (s == 0)
-		return (0);
-	if (s[0] == '-')
-		j = 1;
-	if ((len > 1) & (s[0] == '0') & (s[1] == 'x'))
-		j = 2;
-	len = len - j;
-	new = malloc((precision + j + 1) * sizeof(char));
-	new[precision + j] = '\0';
+	new = malloc((new_size + 1) * sizeof(char));
+	new[new_size] = '\0';
 	while (i < j)
 	{
 		new[i] = s[i];
@@ -73,5 +62,29 @@ char	*ft_strcomplete(const char *s, int precision)
 		j++;
 		i++;
 	}
+	return (new);
+}
+
+char	*ft_strcomplete(const char *s, int precision)
+{
+	char	*new;
+	int		len;
+	int		j;
+	int	new_size;
+
+	j = 0;
+	len = ft_strlen(s);
+	if (s == 0)
+		return (0);
+	if (s[0] == '-')
+		j = 1;
+	if ((len > 1) & (s[0] == '0') & (s[1] == 'x'))
+		j = 2;
+	len = len - j;
+	if (precision > len)
+		new_size = precision + j;
+	else
+		new_size = len + j;
+	new = ft_newvalue(s, new_size, j, precision, len);
 	return (new);
 }
