@@ -36,6 +36,7 @@ int		ft_isclass(char c)
 			res = 1;
 		i++;
 	}
+	free(class);
 	return (res);
 }
 
@@ -55,5 +56,6 @@ int		ft_isnumber(char c)
 			res = 1;
 		i++;
 	}
+	free(numbers);
 	return (res);
 }
