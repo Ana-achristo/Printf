@@ -28,9 +28,9 @@ int		ft_isclass(char c)
 
 	i = 0;
 	res = 0;
-	if (!(class = ft_strdup("cspdiuxX%")))
+	if (!(class = ft_strdup("cspdiuxX%\n")))
 		return (0);
-	while (i < 9)
+	while (i < 10)
 	{
 		if (class[i] == c)
 			res = 1;

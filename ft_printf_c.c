@@ -28,6 +28,8 @@ int	ft_printf_c(t_flags param, va_list lst)
 		param = ft_read_star(lst, 0, param);
 	if (param.converter == '%')
 		value = '%';
+	else if (param.converter == '\n')
+		value = '\n';
 	else
 		value = va_arg(lst, int);
 	if (param.zero == 1)
