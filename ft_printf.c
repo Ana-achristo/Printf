@@ -28,12 +28,14 @@ int	ft_format_read(const char *s, va_list lst)
 {
 	int		i;
 	int		n;
+	int		len;
 	t_flags	param;
 
 	i = 0;
 	n = 0;
 	param.converter = 0;
-	while (s[i] != '\0')
+	len = ft_strlen(s);
+	while (i < len)
 	{
 		if (s[i] == '%')
 		{

@@ -53,8 +53,11 @@ t_flags	ft_identify_end(const char *s, int j, t_flags param)
 
 t_flags	ft_identify(const char *s, int j, t_flags param)
 {
+	int	len;
+	
 	j = j + 1;
-	while ((ft_isclass(s[j]) == 0) & (s[j] != '\0'))
+	len = ft_strlen (s);
+	while ((ft_isclass(s[j]) == 0) & (j < len))
 	{
 		if ((s[j] == '.') & (ft_isnumber(s[j + 1]) == 1))
 			param = ft_number(s, j + 1, param, 1);
