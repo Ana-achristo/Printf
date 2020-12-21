@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: achristo <achristo@student.42sp.org>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/21 20:44:59 by achristo          #+#    #+#             */
+/*   Updated: 2020/12/21 20:55:55 by achristo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_putdata(t_flags param, va_list lst)
@@ -24,14 +36,12 @@ int	ft_putdata(t_flags param, va_list lst)
 	return (n_add);
 }
 
-int	ft_format_read(const char *s, va_list lst)
+int	ft_format_read(const char *s, va_list lst, int i)
 {
-	int		i;
 	int		n;
 	int		len;
 	t_flags	param;
 
-	i = 0;
 	n = 0;
 	param.converter = 0;
 	len = ft_strlen(s);
@@ -40,7 +50,7 @@ int	ft_format_read(const char *s, va_list lst)
 		if (s[i] == '%')
 		{
 			param = ft_flags_init(param);
-			param = ft_identify(s, i, param);
+			param = ft_identify(s, i, param, len);
 			i = param.position;
 			n = n + ft_putdata(param, lst);
 		}
@@ -58,9 +68,11 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	lst;
 	int		n;
+	int		i;
 
+	i = 0;
 	va_start(lst, format);
-	n = ft_format_read(format, lst);
+	n = ft_format_read(format, lst, i);
 	va_end(lst);
 	return (n);
 }

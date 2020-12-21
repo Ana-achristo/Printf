@@ -310,10 +310,10 @@ int main()
 	int a;
 	int b;
 
-	a = printf("Ofi=%5");
-//	b = ft_printf("Meu=%5");
-	printf("a = %d\n", a);
-//	printf("b = %d\n", b);
+	a = printf("Ofi=%5\n");
+	b = ft_printf("Meu=%5\n");
+	printf("a=%d\n", a);
+	printf("b=%d\n", b);
 
 	return (0);
 }

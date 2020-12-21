@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_flags.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: achristo <achristo@student.42sp.org>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/21 20:46:23 by achristo          #+#    #+#             */
+/*   Updated: 2020/12/21 20:50:50 by achristo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 t_flags	ft_flags_init(t_flags param)
@@ -51,12 +63,9 @@ t_flags	ft_identify_end(const char *s, int j, t_flags param)
 	return (param);
 }
 
-t_flags	ft_identify(const char *s, int j, t_flags param)
+t_flags	ft_identify(const char *s, int j, t_flags param, int len)
 {
-	int	len;
-	
 	j = j + 1;
-	len = ft_strlen (s);
 	while ((ft_isclass(s[j]) == 0) & (j < len))
 	{
 		if ((s[j] == '.') & (ft_isnumber(s[j + 1]) == 1))

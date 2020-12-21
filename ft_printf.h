@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: achristo <achristo@student.42sp.org>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/21 20:56:19 by achristo          #+#    #+#             */
+/*   Updated: 2020/12/21 20:56:30 by achristo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -30,7 +42,7 @@ char			*ft_substr(const char *s, unsigned int start, size_t len);
 char			*ft_strcomplete(const char *s, int precision);
 int				ft_printf(const char *format, ...);
 t_flags			ft_flags_init(t_flags param);
-t_flags			ft_identify(const char *s, int j, t_flags param);
+t_flags			ft_identify(const char *s, int j, t_flags param, int len);
 int				ft_print(char *value, int width, char c, int minus);
 int				ft_printf_c(t_flags param, va_list lst);
 int				ft_printf_s(t_flags param, va_list lst);
