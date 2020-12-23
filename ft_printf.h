@@ -6,7 +6,7 @@
 /*   By: achristo <achristo@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 20:56:19 by achristo          #+#    #+#             */
-/*   Updated: 2020/12/21 20:56:30 by achristo         ###   ########.fr       */
+/*   Updated: 2020/12/22 21:09:29 by achristo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <stdarg.h>
 
 typedef	struct	s_flags
